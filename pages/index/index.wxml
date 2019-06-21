@@ -1,0 +1,12 @@
+<view>
+    <block wx:for="{{specs}}" wx:key="item">
+        <view class="group">
+            <view class="group-title">{{item.name}}</view>
+            <view class="specs clearfix">
+                <block wx:for="{{item.list}}" wx:key="item1" wx:for-item="item1">
+                    <view class="{{selectedList[item1.group] == item1.group+'::'+item1.name ? 'spec selected':'spec'}}"  bindtap="specClick" data-gname="{{item1.group}}" data-spec="{{item1.name}}" data-value="{{item1.group+'::'+item1.name}}" >{{item1.name}}</view>
+                </block>
+            </view>
+        </view>
+    </block>
+</view>
